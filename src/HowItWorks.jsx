@@ -46,18 +46,21 @@ const HowItWorks = () => {
 
   return (
     <div className="container mx-auto px-4 py-16">
-      <SplitText
-        text="How it works"
-        className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem]  
-                           font-light text-center text-white tracking-tight "
-        delay={150}
-        animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-        animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-        easing="easeOutCubic"
-        threshold={0.2}
-        rootMargin="-50px"
-        onLetterAnimationComplete={handleAnimationComplete}
-      />
+      <div className="mb-10">
+        <SplitText
+          text="How it works"
+          className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem]  
+            font-light text-center text-blue-200 tracking-tight  "
+          delay={150}
+          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
+          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+          easing="easeOutCubic"
+          threshold={0.2}
+          rootMargin="-50px"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
+      </div>
+
       <div className="grid md:grid-cols-2 gap-8">
         {steps.map((step, index) => (
           <TiltedCard
