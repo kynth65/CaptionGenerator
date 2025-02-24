@@ -7,11 +7,9 @@ import Aurora from "./Backgrounds/Aurora/Aurora";
 import HowItWorks from "./HowItWorks";
 import ScrollVelocity from "./TextAnimations/ScrollVelocity/ScrollVelocity";
 import Particles from "./Backgrounds/Particles/Particles";
+import GradientText from "./TextAnimations/GradientText/GradientText";
 
 function App() {
-  const handleAnimationComplete = () => {
-    console.log("All letters have animated!");
-  };
   return (
     <>
       <div className="min-h-screen  bg-black relative overflow-hidden">
@@ -34,18 +32,15 @@ function App() {
           />
         </div>
         <div className="flex flex-col justify-center items-center min-h-screen px-4 mt-[-200px]">
-          <SplitText
-            text="Caption Generator"
-            className="text-[4.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] 
-                      text-center text-white tracking-tight leading-none"
-            delay={150}
-            animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-            animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-            easing="easeOutCubic"
-            threshold={0.2}
-            rootMargin="-50px"
-            onLetterAnimationComplete={handleAnimationComplete}
-          />
+          <GradientText
+            colors={["#FFFFFF", "#1E90FF", "#87CEEB", "#FFFFFF", "#1E90FF"]}
+            animationSpeed={3}
+            showBorder={false}
+            className="custom-class text-[3.5rem] sm:text-[6.5rem] text-center text-white mb-16"
+          >
+            {" "}
+            Caption Generator
+          </GradientText>
 
           {/* Subtitle text similar to the reference */}
           <p className="text-sm sm:text-base md:text-lg text-gray-300 mt-6 max-w-xl text-center opacity-80">

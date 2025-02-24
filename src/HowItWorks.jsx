@@ -1,8 +1,13 @@
 import React from "react";
 import TiltedCard from "./Components/TiltedCard/TiltedCard";
 import { Type, Sparkles, CheckCircle, Copy, RotateCcw } from "lucide-react";
+import GradientText from "./TextAnimations/GradientText/GradientText";
+import SplitText from "./TextAnimations/SplitText/SplitText";
 
 const HowItWorks = () => {
+  const handleAnimationComplete = () => {
+    console.log("All letters have animated!");
+  };
   const steps = [
     {
       number: "1",
@@ -41,10 +46,18 @@ const HowItWorks = () => {
 
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-[3.5rem] sm:text-[4.5rem]  text-white mb-16">
-        How it works
-      </h1>
-
+      <SplitText
+        text="How it works"
+        className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem]  
+                           font-light text-center text-white tracking-tight "
+        delay={150}
+        animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
+        animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+        easing="easeOutCubic"
+        threshold={0.2}
+        rootMargin="-50px"
+        onLetterAnimationComplete={handleAnimationComplete}
+      />
       <div className="grid md:grid-cols-2 gap-8">
         {steps.map((step, index) => (
           <TiltedCard
