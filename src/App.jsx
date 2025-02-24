@@ -8,7 +8,7 @@ import HowItWorks from "./HowItWorks";
 import ScrollVelocity from "./TextAnimations/ScrollVelocity/ScrollVelocity";
 import Particles from "./Backgrounds/Particles/Particles";
 import GradientText from "./TextAnimations/GradientText/GradientText";
-import Navbar from "./Components/TiltedCard/reusable/navbar";
+import Navbar from "./Components/TiltedCard/reusable/NavBar";
 
 function App() {
   const howItWorksRef = useRef(null);
