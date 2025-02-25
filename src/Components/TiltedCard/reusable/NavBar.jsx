@@ -1,31 +1,28 @@
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react"; // Using lucide icons for the mobile menu
+import { Link, Menu, X } from "lucide-react"; // Using lucide icons for the mobile menu
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Services", href: "#services" },
-    { name: "Process", href: "#process" },
-    { name: "Team", href: "#team" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Reviews", href: "#reviews" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#contact" },
+    { name: "about", href: "/about" },
+
+    { name: "Feedback", href: "/Feedback" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-lg border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-semibold text-white flex items-center gap-2">
-              <span className="text-blue-400 text-3xl">*</span>
-              Caption
-            </span>
-          </div>
-
+          {/* Logo */}{" "}
+          <a href="/" className="cursor-pointer">
+            <div className="flex-shrink-0 flex items-center">
+              <span className="text-2xl font-semibold text-white flex items-center gap-2">
+                <span className="text-blue-400 text-3xl">*</span>
+                Caption
+              </span>
+            </div>
+          </a>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
@@ -37,11 +34,13 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            <a
+              href="/AiContentGenerator"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+            >
               Get Started
-            </button>
+            </a>
           </div>
-
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
